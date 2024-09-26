@@ -10,5 +10,8 @@ type cases = [
   Expect<Equal<TupleToObject<typeof tupleMix>, { 1: 1; '2': '2'; 3: 3; '4': '4' }>>,
 ]
 
+// this is not a valid tuple. Members of a tuple should only be strings or numbers as it's the only thing we can
+// use as a key when we transform a tuple into an object. In other words members of a tuple must be of the
+// PropertyKey type
 // @ts-expect-error
 type error = TupleToObject<[[1, 2], {}]>

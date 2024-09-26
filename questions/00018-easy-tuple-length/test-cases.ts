@@ -9,5 +9,5 @@ type cases = [
   // @ts-expect-error
   Length<5>,
   // @ts-expect-error
-  Length<'hello world'>,
+  Length<'hello world'>, // to fix that we say Length<T extends readonly any[]>
 ]
